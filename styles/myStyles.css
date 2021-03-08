@@ -7,3 +7,7 @@
 #controls i::before {
 	font-size: x-large;
 }
+
+.hide {
+	display: none;
+}

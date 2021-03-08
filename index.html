@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Notes Register</title>
+	<title>Notes Register - Home</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/myStyles.css">
@@ -12,8 +12,9 @@
 		<div class="row">
 			<nav class="col nav navbar">
 				<div id="controls">
-					<button class="btn"><i class="bi bi-list"></i></button>
-					<button class="btn"><i class="bi bi-plus-square"></i></button>	
+					<button class="btn" onclick=""><i class="bi bi-list"></i></button>
+					<!-- Create a new note -->
+					<button class="btn" onclick="showHideDisplay()"><i class="bi bi-plus-square"></i></button>	
 				</div>
 				
 				<p id="todayDate" class="">Actual Date</p>
@@ -30,28 +31,24 @@
 	</header>
 	<main class="container-fluid">
 		<!-- Layout: 2 columns showing the diferent notes -->
-		<div class="row">
-			<div class="col-12 col-md-6">
-				<div class="card">
-					<h3 class="card-title">Title</h3>
-					<p class="card-body"><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
-				</div>
-				
-			</div>
-			<div class="col-12 col-md-6">
-				<h3>Title</h3>
-				<p><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
+		<!-- Section where the notes are gonna be displayed -->
+		<div id="displayCreateNote" class="hide">
+			<form class="" id="create-form"> 
+			<label class="form-label">Title</label>
+			<input type="text" name="title" class="form-control">
+			<label class="form-label">Context</label>
+			<input type="textarea" name="content" cols="" rows="20" class="form-control">
+
+			<button form="create-form" value="" id="submit-new-form">SUBMIT</button>
+		</form>
+		<br />
+		
+		<button>CANCEL</button>
+		</div>
+		<div class="row" id="notes-list">
+			<button onclick="showAllNotes(this)">SHOW ALL</button>
+			<br/>
+			<!--
 			<div class="col-12 col-md-6">
 				<h3>Title</h3>
 				<p><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -70,6 +67,7 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
+		-->
 		</div>
 	</main>
 	<footer>
